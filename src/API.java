@@ -6,7 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class CurrencyConverterAPI {
+public class API {
 
    public void convert (String baseCurrency, String targetCurrency, double amount) throws IOException, InterruptedException {
 
@@ -23,11 +23,11 @@ public class CurrencyConverterAPI {
               .send(request, HttpResponse.BodyHandlers.ofString());
 
       Gson gson = new Gson();
-      Currency currency = gson.fromJson(response.body(), Currency.class);
+      CurrencyInfo currencyInfo = gson.fromJson(response.body(), CurrencyInfo.class);
 
-      System.out.println("Converting from " + currency.base_code() + " to " + currency.target_code());
-      System.out.println("At the current rate (1 " + currency.base_code() + " = " + currency.conversion_rate()
-              + " " + currency.target_code() + "), the amount of " + amount + " " + currency.base_code()
-              + " is worth " + currency.conversion_result() + " " + currency.target_code());
+      System.out.println("Converting from " + currencyInfo.base_code() + " to " + currencyInfo.target_code());
+      System.out.println("At the current rate (1 " + currencyInfo.base_code() + " = " + currencyInfo.conversion_rate()
+              + " " + currencyInfo.target_code() + "), the amount of " + amount + " " + currencyInfo.base_code()
+              + " is worth " + currencyInfo.conversion_result() + " " + currencyInfo.target_code());
    }
 }
