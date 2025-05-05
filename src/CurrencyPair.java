@@ -1,8 +1,8 @@
 import java.util.List;
 
 public class CurrencyPair {
-    private String baseCurrency;
-    private String targetCurrency;
+    private final String baseCurrency;
+    private final String targetCurrency;
     List<String> baseCurrencyList;
     List<String> targetCurrencyList;
 

@@ -24,10 +24,11 @@ public class Menu {
                 "9. Japanese Yen (JPY) to Brazilian Real (BRL)\n" +
                 "10. Brazilian Real (BRL) to Japanese Yen (JPY)\n" +
                 "11. South Korean Won (KRW) to Brazilian Real (BRL)\n" +
-                "12. Brazilian Real (BRL) to South Korean Won (KRW)\n";
+                "12. Brazilian Real (BRL) to South Korean Won (KRW)\n" +
+                "0. Exit\n";
     }
 
-    public void setConvertOption () {
+    public void setUserChoice() {
         System.out.print("Option: ");
         this.userChoice = scanner.nextInt();
     }
@@ -39,7 +40,6 @@ public class Menu {
     public void setAmount () {
         System.out.print("Please enter the amount you want to convert: ");
         this.inputAmount = scanner.nextInt();
-        scanner.close();
     }
 
     public double getInputAmount() {
