@@ -25,9 +25,11 @@ public class API {
       Gson gson = new Gson();
       CurrencyInfo currencyInfo = gson.fromJson(response.body(), CurrencyInfo.class);
 
-      System.out.println("Converting from " + currencyInfo.base_code() + " to " + currencyInfo.target_code());
-      System.out.println("At the current rate (1 " + currencyInfo.base_code() + " = " + currencyInfo.conversion_rate()
-              + " " + currencyInfo.target_code() + "), the amount of " + amount + " " + currencyInfo.base_code()
-              + " is worth " + currencyInfo.conversion_result() + " " + currencyInfo.target_code());
+      System.out.println("\n" + Emojis.CONVERSION + " Converting from " + currencyInfo.base_code() + " to " + currencyInfo.target_code());
+      System.out.println(Emojis.HAND_POINTING + " At current rate 1 " + currencyInfo.base_code() + " = " + currencyInfo.conversion_rate()
+              + " " + currencyInfo.target_code());
+      System.out.println(Emojis.YELLOW_COLOR + Emojis.DOLLAR_BAG + " The input amount of " + amount + " " + currencyInfo.base_code() +
+              " is equivalent to " + currencyInfo.conversion_result() + " " + currencyInfo.target_code() +
+              " " + Emojis.RESET_COLOR);
    }
 }
