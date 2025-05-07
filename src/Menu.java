@@ -19,7 +19,8 @@ public class Menu {
                         "4️⃣ BRL → EUR",       "🔟 BRL → JPY",
                         "5️⃣ ARS → BRL",       "1️⃣1️⃣ KRW → BRL",
                         "6️⃣ BRL → ARS",       "1️⃣2️⃣ BRL → KRW",
-                        Emojis.EXIT + " Exit"
+                        Emojis.ZERO + " Show latest conversions \n\n" +
+                                "9\uFE0F\u20E39\uFE0F\u20E3" + " Exit"
                 );
     }
 
